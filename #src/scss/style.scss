@@ -7,9 +7,6 @@
 /*шрифт по умолчанию */
 $fontfamily: "PT Sans";
 
-//html {
-//  scroll-behavior: smooth;
-//}
 /*переменные*/
 $minwidth: 320px;
 $mw: 950; /*прописываем вымеряную ширину контейнера (без отступов)*/
@@ -22,7 +19,7 @@ $md4: 479.98;
 body {
   color: #000;
   font-size: 14px;
-  //text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
   &_lock {
     overflow: hidden;
     @media (max-width: $md3+px) {
@@ -48,6 +45,21 @@ body {
   left: 0;
   opacity: 0;
   visibility: hidden;
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+  display: none;
+
+  &.overlay-show {
+    display: block;
+  }
 }
 
 .wrapper {

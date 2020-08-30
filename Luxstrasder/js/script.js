@@ -1,44 +1,6 @@
 "use strict";
-
-
 document.addEventListener('DOMContentLoaded', function() {
     console.log('document is ready. I can sleep now');
-    $(document).ready(function () {
-        $('.slider').slick({
-            arrows: true,/*показывать, отключить кнопки*/
-            dots: false, /*показывать /не показывать точки*/
-            adaptiveHeight: false,/*адаптивная высота по картинке*/
-            slidesToShow: 1,/*кол-во картинок за 1 раз*/
-            slidesToScroll: 1,/*вол-во изображений пролистываемых за 1 раз*/
-            speed: 1000, /*скорость пролистывания изображения*/
-            easing: 'ease', /*тип анимации(не разобрался)*/
-            infinite: true, /*бесконечный иил нет слайдер*/
-            // initialSlide: 0,
-            autoplay:true, /*автоперелистывание*/
-            autoplaySpeed: 5000,/*задержка автопролистывания*/
-            //    настройки автопролистывания
-            pauseOnFocus: true,/*пауза при фокусе*/
-            pauseOnHover: true,/*при наведении*/
-            pauseOnDotsHover: true, /*пауза при наведении на точки*/
-            //
-            draggable: true, /*отключение перелистывания слайда потянув за картинку НА ПК*/
-            swipe: true, /*отключение перелистывания слайда потянув за картинку НА ТАЧСКРИНАХ*/
-            //НАСТРОЙКИ ТАЧСКРИНОВ
-            touchThreshold:5, /*момент срабатывания слайда при свайпе*/
-            touchMove: true,/*при отключении листать можно будет только нажав на кнопки а не свайпом*/
-            //
-            waitForAnimate: true, /*следующий слайд будет толкьо полсе завершения предыдущего. при отключении можно листать быстрее*/
-            centerMode:false,/*настройка прозрачности дополнительным классам .slick-center*/
-            variableWidth: false,/*слайды все видны сразу в одной ленте + слайды будут в своей родной ширине*/
-            /*ряды слайдов*/
-            rows:1,/*кол-во рядов слайдов*/
-            slidesPerRow:1, /*кол-во слайдов в ряду*/
-            vertical:false,/*вертикальные слайды(слайды буудт прокручиваться вертикально./ .slick-track-)display: block;*/
-            nextArrow: $('.slick-next'),
-            prevArrow: $('.slick-prev')
-
-        });
-    });
 
     /*код для плавного перемещения якорей с плагином jQuery Creep.js****/
     $(function(){
@@ -48,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         });
     });
-
 
 
     /*user-menu при клике по иконке в блоке .user-header__icon, блоку user-header__menu будет добавляться/удаляться (togle) класс _active, заставляя исчезать и появляться меню*/
@@ -106,8 +67,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
-    /*слайдер*/
+    function ibg(){
 
+        let ibg=document.querySelectorAll(".ibg");
+        for (var i = 0; i < ibg.length; i++) {
+            if(ibg[i].querySelector('img')){
+                ibg[i].style.backgroundImage = 'url('+ibg[i].querySelector('img').getAttribute('src')+')';
+            }
+        }
+    }
+
+    ibg();
+
+    /*функция открывает бургер меню*/
+    /*слайдер*/
+    $(document).ready(function () {
+        $('.slider').slick({
+            arrows: true,/*показывать, отключить кнопки*/
+            dots: false, /*показывать /не показывать точки*/
+            adaptiveHeight: false,/*адаптивная высота по картинке*/
+            slidesToShow: 1,/*кол-во картинок за 1 раз*/
+            slidesToScroll: 1,/*вол-во изображений пролистываемых за 1 раз*/
+            speed: 1000, /*скорость пролистывания изображения*/
+            easing: 'ease', /*тип анимации(не разобрался)*/
+            infinite: true, /*бесконечный иил нет слайдер*/
+            // initialSlide: 0,
+            autoplay:true, /*автоперелистывание*/
+            autoplaySpeed: 5000,/*задержка автопролистывания*/
+            //    настройки автопролистывания
+            pauseOnFocus: true,/*пауза при фокусе*/
+            pauseOnHover: true,/*при наведении*/
+            pauseOnDotsHover: true, /*пауза при наведении на точки*/
+            //
+            draggable: true, /*отключение перелистывания слайда потянув за картинку НА ПК*/
+            swipe: true, /*отключение перелистывания слайда потянув за картинку НА ТАЧСКРИНАХ*/
+            //НАСТРОЙКИ ТАЧСКРИНОВ
+            touchThreshold:5, /*момент срабатывания слайда при свайпе*/
+            touchMove: true,/*при отключении листать можно будет только нажав на кнопки а не свайпом*/
+            //
+            waitForAnimate: true, /*следующий слайд будет толкьо полсе завершения предыдущего. при отключении можно листать быстрее*/
+            centerMode:false,/*настройка прозрачности дополнительным классам .slick-center*/
+            variableWidth: false,/*слайды все видны сразу в одной ленте + слайды будут в своей родной ширине*/
+            /*ряды слайдов*/
+            rows:1,/*кол-во рядов слайдов*/
+            slidesPerRow:1, /*кол-во слайдов в ряду*/
+            vertical:false,/*вертикальные слайды(слайды буудт прокручиваться вертикально./ .slick-track-)display: block;*/
+            nextArrow: $('.slick-next'),
+            prevArrow: $('.slick-prev')
+
+        });
+    });
 
     /*нижний слайдер*/
     $(document).ready(function(){
@@ -203,6 +212,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     });
+//
+
+
+
 // Dynamic Adapt v.1
 // HTML data-move="where(uniq class name),position(digi),when(breakpoint)"
 // e.x. data-move="item,2,992"
@@ -318,7 +331,3 @@ document.addEventListener('DOMContentLoaded', function() {
     /*===========================================================================*/
 
 });
-
-
-
-
